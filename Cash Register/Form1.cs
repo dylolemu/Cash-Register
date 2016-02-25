@@ -50,15 +50,15 @@ namespace Cash_Register
                 }
                 else
                 {
-                   fries = Convert.ToInt16(friesBox.Text);  
+                   fries = Convert.ToInt16(friesBox.Text); 
                 }
 
-                if (fries < 0)
+                if (fries < 0)// if a negative number is typed, it turns it into 0
                 {
                     fries = 0;
                 }
 
-                if (tacosBox.Text == "")
+                if (tacosBox.Text == "")//if no quanity is inputed it will mark it as 0
                 {
                     tacos = 0;
                 }
@@ -67,12 +67,12 @@ namespace Cash_Register
                     tacos = Convert.ToInt16(tacosBox.Text);
                 }
 
-                if (tacos < 0)
+                if (tacos < 0)// if a negative number is typed, it turns it into 0
                 {
                     tacos = 0;
                 }
 
-                if (drinkBox.Text == "" )
+                if (drinkBox.Text == "")//if no quanity is inputed it will mark it as 0
                 {
                     drinks = 0;
                 }
@@ -80,12 +80,10 @@ namespace Cash_Register
                 {
                     drinks = Convert.ToInt16(drinkBox.Text);
                 }
-                if (drinks < 0)
+                if (drinks < 0)// if a negative number is typed, it turns it into 0
                 {
                     drinks = 0;
                 }
-
-
 
                 //Calculating sub total, tax, and total and placing it in specified labels
                 firsttotal = (tacos * 3.25 + fries * 1.75 + drinks * 1.25);
@@ -127,7 +125,7 @@ namespace Cash_Register
                 }
             }
             catch
-            {
+            {   //if no integer is place, this happen...
                 canPrint = false;//you won't be able to print receipt
                 labelChange.Text = "You must enter \n an Integer";
             }
